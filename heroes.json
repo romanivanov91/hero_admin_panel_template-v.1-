@@ -1,0 +1,61 @@
+{
+  "heroes": [
+    {
+      "id": "709f756b-0ee5-4e46-8ee1-bcd8d137b185",
+      "name": "Аква",
+      "description": "Плавать",
+      "element": "water"
+    },
+    {
+      "id": "6747bdd8-29e3-429c-a60d-7e18351640b9",
+      "name": "Балван",
+      "description": "Тупить",
+      "element": "wind"
+    },
+    {
+      "id": "3e2de214-1622-463a-a891-20f79f7e46d5",
+      "name": "Затупок",
+      "description": "аукпукп",
+      "element": "fire"
+    },
+    {
+      "id": "b73542e4-a518-4233-a647-daa1d3a50d13",
+      "name": "пеупе",
+      "description": "оьннг",
+      "element": "wind"
+    },
+    {
+      "id": "f5b6e6a9-ba7e-4724-8708-bf610271f8cc",
+      "name": "дгшдшщ",
+      "description": "гшдгшдгш",
+      "element": "earth"
+    }
+  ],
+  "filters": [
+    {
+      "name": "all",
+      "label": "Все",
+      "className": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "className": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "className": "btn btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Воздух",
+      "className": "btn btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "className": "btn-secondary"
+    }
+  ]
+}
