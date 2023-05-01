@@ -1,5 +1,7 @@
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+//Нижние закоментированные импорты теперь не нужны, так как используется Redux Toolkit - в нем уже все это импортируется по умолчанию
+// import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+// import ReduxThunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import filters from '../reducers/filters';
 import heroes from '../reducers/heroes';
 
@@ -36,12 +38,12 @@ const stringMiddleware = () => (next) => (action) => {
 
 //combineReducers нужен для того чтобы скомбинировать 2 отдельных редьюсера. Вместо filters: filters можно написать просто filters
 //compose нужен чтобы скомбинировать enhancer или Middleware с DEVTOOLS
-const store = createStore(
-    combineReducers({filters: filters, heroes: heroes}), 
-    compose(
-        applyMiddleware(ReduxThunk, stringMiddleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    ));
+// const store = createStore(
+//     combineReducers({filters: filters, heroes: heroes}), 
+//     compose(
+//         applyMiddleware(ReduxThunk, stringMiddleware),
+//         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//     ));
 
 
 //Использование enhancer
@@ -51,5 +53,11 @@ const store = createStore(
 //         enhancer,
 //         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 //     ));
+
+const store = configureStore({
+    reducer: {heroes, filters},//комбинируем редьюсеры
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),//используем мидлвейеры по умолчанию плюс добавляем свой stringMiddleware. В getDefaultMiddleware уже включен ReduxThunk и еще другие про которые можно почитать в документации
+    devTools: process.env.NODE_ENV !== 'production'//включаем REDUX_DEVTOOLS только если у нас режим разработки
+})
 
 export default store;
