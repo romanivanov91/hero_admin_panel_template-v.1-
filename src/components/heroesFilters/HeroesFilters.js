@@ -8,7 +8,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHttp} from '../../hooks/http.hook';
-import { filtersFetched, filtersFetchedError, activeFilterChanged} from '../../actions'
+import { fetchFilters, activeFilterChanged} from '../../actions'
 import Spinner from '../spinner/Spinner';
 import classNames from 'classnames';//Библеотека для добавления класса активности)
 
@@ -20,9 +20,7 @@ const HeroesFilters = () => {
     const {request} = useHttp();
     
     useEffect(() => {
-        request('http://localhost:3001/filters')
-        .then(res => dispatch(filtersFetched(res)))
-        .catch(() => dispatch(filtersFetchedError()));
+        dispatch(fetchFilters(request));
     }, []);
 
     

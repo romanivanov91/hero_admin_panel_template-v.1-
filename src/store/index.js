@@ -1,6 +1,9 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
 import filters from '../reducers/filters';
 import heroes from '../reducers/heroes';
+
+//Redux-thunk - это какая-то функция, которая берёт текущий store, текущий action и что-то делает с этим. Более подробно лучше прочитать в документации.Redux-thunk — это как раз такая функция, которая, что-то делает со store.
 
 //Функция stringMiddleware преобразовывает action в объект, если в него пришла строка. Тоже что и делает закоментированная ниже функция enhancer, только использует готовый код
 const stringMiddleware = () => (next) => (action) => {
@@ -36,7 +39,7 @@ const stringMiddleware = () => (next) => (action) => {
 const store = createStore(
     combineReducers({filters: filters, heroes: heroes}), 
     compose(
-        applyMiddleware(stringMiddleware),
+        applyMiddleware(ReduxThunk, stringMiddleware),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     ));
 
