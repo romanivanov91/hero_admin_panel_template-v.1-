@@ -2,8 +2,8 @@
 // import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 // import ReduxThunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
-import filters from '../reducers/filters';
-import heroes from '../reducers/heroes';
+import filters from '../components/heroesFilters/filtersSlice';
+import heroes from '../components/heroesList/heroesSlice';
 
 //Redux-thunk - это какая-то функция, которая берёт текущий store, текущий action и что-то делает с этим. Более подробно лучше прочитать в документации.Redux-thunk — это как раз такая функция, которая, что-то делает со store.
 

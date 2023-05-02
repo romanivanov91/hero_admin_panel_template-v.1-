@@ -8,9 +8,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHttp} from '../../hooks/http.hook';
-import { fetchFilters, activeFilterChanged} from '../../actions'
+
+import { fetchFilters} from '../../actions'
+import { activeFilterChanged} from './filtersSlice'
+
 import Spinner from '../spinner/Spinner';
-import classNames from 'classnames';//Библеотека для добавления класса активности)
+import classNames from 'classnames';//Библиотека для добавления класса активности)
 
 
 const HeroesFilters = () => {

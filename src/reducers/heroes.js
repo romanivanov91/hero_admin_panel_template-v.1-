@@ -1,3 +1,5 @@
+//Файл не используется, так как все action и reducer создаются в файлах heroesSlice и filtersSlice с помощью createSlice
+
 const initialState = {
     heroes: [],
     heroesLoadingStatus: 'idle'
