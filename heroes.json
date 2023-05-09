@@ -19,12 +19,6 @@
       "element": "fire"
     },
     {
-      "id": "b73542e4-a518-4233-a647-daa1d3a50d13",
-      "name": "пеупе",
-      "description": "оьннг",
-      "element": "wind"
-    },
-    {
       "id": "f5b6e6a9-ba7e-4724-8708-bf610271f8cc",
       "name": "дгшдшщ",
       "description": "гшдгшдгш",
@@ -35,6 +29,12 @@
       "name": "лвалу",
       "description": "гнлгдлгшдл",
       "element": "fire"
+    },
+    {
+      "id": "6f09b58b-3bb7-475c-b7cf-0ea52152fbcc",
+      "name": "jryjytj",
+      "description": "uiykyuk",
+      "element": "wind"
     }
   ],
   "filters": [

@@ -9,8 +9,9 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHttp} from '../../hooks/http.hook';
 
-import { fetchFilters} from '../../actions'
-import { activeFilterChanged} from './filtersSlice'
+//Теперь fetchFilterss импортируем из filtersSlice
+//import { fetchFilters} from '../../actions'
+import { activeFilterChanged, fetchFilters} from './filtersSlice'
 
 import Spinner from '../spinner/Spinner';
 import classNames from 'classnames';//Библиотека для добавления класса активности)
