@@ -8,10 +8,11 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHttp} from '../../hooks/http.hook';
+import store from '../../store';
 
 //Теперь fetchFilterss импортируем из filtersSlice
 //import { fetchFilters} from '../../actions'
-import { activeFilterChanged, fetchFilters} from './filtersSlice'
+import { activeFilterChanged, fetchFilters, selectAll} from './filtersSlice'
 
 import Spinner from '../spinner/Spinner';
 import classNames from 'classnames';//Библиотека для добавления класса активности)
@@ -19,9 +20,14 @@ import classNames from 'classnames';//Библиотека для добавле
 
 const HeroesFilters = () => {
 
-    const {filters, filtersLoadingStatus, activeFilterName} = useSelector(state=>state.filters)
+    const {filtersLoadingStatus, activeFilterName} = useSelector(state=>state.filters)
     const dispatch = useDispatch();
     const {request} = useHttp();
+
+    //Преобразовываем в массив объект с фильтрами из глобального state. Напоминаю store.getState() возвращает текущее значение state
+    const filters = selectAll(store.getState());
+
+    console.log(store.getState());
     
     useEffect(() => {
         dispatch(fetchFilters(request));
